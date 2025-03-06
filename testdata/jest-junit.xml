@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests">
+    <testsuite name="addition 1" tests="2" errors="0" failures="1" skipped="0" timestamp="2017-07-13T09:42:00" time="0.008">
+        <testcase classname="addition 1 positive numbers should add up" name="addition 1 positive numbers should add up" time="0.004">
+            <properties>
+                <property name="dd_tags[test.invocations]" value="1" />
+            </properties>
+        </testcase>
+        <testcase classname="addition 1 positive numbers should add up" name="addition 1 positive numbers should add up" time="0.004">
+            <properties>
+            </properties>
+            <failure>Error on add up</failure>
+        </testcase>
+    </testsuite>
+    <testsuite name="addition 2" tests="1" errors="0" failures="0" skipped="0" timestamp="2017-07-13T09:42:30" time="0.004">
+        <properties>
+            <property name="key" value="value" />
+        </properties>
+        <testcase classname="addition 2 positive numbers should add up" name="addition 2 positive numbers should add up" time="0.004">
+            <properties>
+                <property name="dd_tags[test.invocations]" value="1" />
+            </properties>
+        </testcase>
+    </testsuite>
+</testsuites>
