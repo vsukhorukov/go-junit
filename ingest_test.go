@@ -11,10 +11,6 @@ import (
 	"time"
 )
 
-const (
-	timeFormatISO8601 = "2006-01-02T15:04:05"
-)
-
 func TestExamplesInTheWild(t *testing.T) {
 	tests := []struct {
 		title    string
@@ -236,7 +232,7 @@ func TestExamplesInTheWild(t *testing.T) {
 				firstSuite.Aggregate()
 				assertLen(t, firstSuite.Tests, 2)
 				assertEqual(t, "2017-07-13T09:42:00", firstSuite.Properties["timestamp"])
-				assertEqual(t, "2017-07-13T09:42:00", firstSuite.Timestamp.Format(timeFormatISO8601))
+				assertEqual(t, "2017-07-13T09:42:00", firstSuite.Timestamp.Format(timestampLayout))
 				assertEqual(t, 1, firstSuite.Totals.Failed)
 				{
 					assertEqual(t, "1", firstSuite.Tests[0].Properties["dd_tags[test.invocations]"])
@@ -247,7 +243,7 @@ func TestExamplesInTheWild(t *testing.T) {
 				assertLen(t, secondSuite.Tests, 1)
 				assertEqual(t, "value", secondSuite.Properties["key"])
 				assertEqual(t, "2017-07-13T09:42:30", secondSuite.Properties["timestamp"])
-				assertEqual(t, "2017-07-13T09:42:30", secondSuite.Timestamp.Format(timeFormatISO8601))
+				assertEqual(t, "2017-07-13T09:42:30", secondSuite.Timestamp.Format(timestampLayout))
 				{
 					assertEqual(t, "1", secondSuite.Tests[0].Properties["dd_tags[test.invocations]"])
 				}

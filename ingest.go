@@ -11,6 +11,8 @@ import (
 	"time"
 )
 
+const timestampLayout = "2006-01-02T15:04:05" // ISO8601
+
 // findSuites performs a depth-first search through the XML document, and
 // attempts to ingest any "testsuite" tags that are encountered.
 func findSuites(nodes []xmlNode, suites chan Suite) {
@@ -31,8 +33,7 @@ func ingestSuite(root xmlNode) Suite {
 		Properties: root.Attrs,
 	}
 	if root.Attr("timestamp") != "" {
-		const layout = "2006-01-02T15:04:05"
-		if timestamp, err := time.Parse(layout, root.Attr("timestamp")); err == nil {
+		if timestamp, err := time.Parse(timestampLayout, root.Attr("timestamp")); err == nil {
 			suite.Timestamp = timestamp
 		}
 	}
