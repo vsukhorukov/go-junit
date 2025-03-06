@@ -8,21 +8,18 @@ on:
       - "master"
 
 jobs:
-  lint:
-    name: GolangCI-Lint
+  golangci:
+    name: lint
     runs-on: ubuntu-22.04
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v4
       - name: Setup go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
-          go-version: 1.12
+          go-version: 1.21
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v2
+        uses: golangci/golangci-lint-action@v6
         with:
-          # https://github.com/golangci/golangci-lint/releases/tag/v1.50.1
-          version: v1.50.1
+          version: v1.64

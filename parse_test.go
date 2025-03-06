@@ -9,7 +9,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"testing"
 )
 
@@ -40,7 +40,7 @@ func TestReparent(t *testing.T) {
 
 		t.Run(name, func(t *testing.T) {
 			reader := reparentXML(bytes.NewReader(test.input))
-			actual, err := ioutil.ReadAll(reader)
+			actual, err := io.ReadAll(reader)
 			assertNoError(t, err)
 
 			assertEqual(t, test.expected, string(actual))

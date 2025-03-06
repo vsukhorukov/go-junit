@@ -37,6 +37,11 @@ The simplest of which parses raw JUnit XML data.
             <failure message="test failure">Assertion failed</failure>
         </testcase>
         <testcase classname="JUnitXmlReporter.constructor" name="should default consolidate to true" time="0">
+            <properties>
+                <property name="java.vendor" value="Sun Microsystems Inc." />
+                <property name="compiler.debug" value="on" />
+                <property name="project.jdk.classpath" value="jdk.classpath.1.6" />
+            </properties>
             <skipped />
         </testcase>
         <testcase classname="JUnitXmlReporter.constructor" name="should default useDotNotation to true" time="0" />

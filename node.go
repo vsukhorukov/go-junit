@@ -20,7 +20,7 @@ func (n *xmlNode) Attr(name string) string {
 
 func (n *xmlNode) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	type nodeAlias xmlNode
-	if err := d.DecodeElement((*nodeAlias)(n), &start); err != nil {
+	if err := d.DecodeElement((*nodeAlias)(n), &start); err != nil { //nolint:musttag
 		return err
 	}
 
