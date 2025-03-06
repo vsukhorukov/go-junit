@@ -24,5 +24,5 @@ jobs:
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
-          # https://github.com/golangci/golangci-lint/releases/tag/v1.50.1
-          version: v1.50.1
+          # https://github.com/golangci/golangci-lint/releases/tag/v1.54.2
+          version: v1.54.2
